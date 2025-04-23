@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Questions - Ace The Race</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <img src="assets/logo.png" alt="Ace The Race Logo">
+                <span>Ace The Race</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h1 id="company-title">Loading...</h1>
+                    <p>Practice the most frequently asked interview questions</p>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <div class="form-group" style="width: 200px;">
+                        <select id="difficulty-filter" class="form-select">
+                            <option value="">All Difficulties</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div id="question-count" class="text-light">Loading questions...</div>
+                </div>
+
+                <div class="table-container">
+                    <table id="questions-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Difficulty</th>
+                                <th>Topics</th>
+                                <th>Frequency</th>
+                                <th>Acceptance Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="questions-body">
+                            <!-- Questions will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ace The Race. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="company.js"></script>
+</body>
+</html>

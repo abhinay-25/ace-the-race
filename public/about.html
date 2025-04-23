@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ace The Race</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+        }
+
+        .nav-links a.active {
+            color: #2c3e50;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+
+        .feature-list li::before {
+            content: "\2022";
+            font-size: 18px;
+            color: #2c3e50;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <img src="assets/logo.png" alt="Ace The Race Logo">
+                <span>Ace The Race</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h1>About Ace The Race</h1>
+                    <p>Your ultimate companion for technical interview preparation</p>
+                </div>
+
+                <div class="card mb-4">
+                    <h2>Our Mission</h2>
+                    <p>At Ace The Race, we're dedicated to helping software engineers prepare for technical interviews at top tech companies. We provide curated, company-specific interview questions to help you focus your preparation and increase your chances of success.</p>
+                </div>
+
+                <div class="card mb-4">
+                    <h2>What We Offer</h2>
+                    <ul class="feature-list">
+                        <li>Company-specific interview questions</li>
+                        <li>Difficulty ratings and acceptance rates</li>
+                        <li>Topic tags for focused practice</li>
+                        <li>Frequency metrics to prioritize your preparation</li>
+                        <li>Direct links to practice platforms</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Why Choose Us</h2>
+                    <p>Our platform stands out by providing:</p>
+                    <ul class="feature-list">
+                        <li>Regularly updated question database</li>
+                        <li>Accurate difficulty assessments</li>
+                        <li>Real interview insights</li>
+                        <li>User-friendly interface</li>
+                        <li>Comprehensive filtering and search capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ace The Race. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

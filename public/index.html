@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ace The Race - Practice Interview Questions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+      /* Additional styles for home page */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links a {
+        margin-left: 2rem;
+      }
+
+      .nav-links a.active {
+        font-weight: bold;
+      }
+
+      .hero {
+        background-color: #f7f7f7;
+        padding: 4rem 0;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .companies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+      }
+
+      .company-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        border: 1px solid #eee;
+      }
+
+      .company-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .company-card img.logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+        object-fit: contain;
+      }
+
+      .company-card h3 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        color: #2c3e50;
+      }
+
+      .company-card .diagram {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+
+      .diagram-container {
+        max-height: 150px;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="/" class="nav-logo">
+          <img src="assets/logo.png" alt="Ace The Race Logo" />
+          <span>Ace The Race</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="resources.html">Resources</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Practice Interview Questions from Top Tech Companies</h1>
+          <p>
+            Prepare for your dream job with our curated collection of interview
+            questions
+          </p>
+        </div>
+      </section>
+
+      <section class="companies">
+        <div class="container">
+          <div class="section-header">
+            <h2>Select a Company</h2>
+            <p>Choose from leading tech companies and start practicing</p>
+          </div>
+          <div id="companies-container" class="companies-grid">
+            <!-- Company cards will be added here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Ace The Race. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const companies = [
+        {
+          name: "Google",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+        },
+        {
+          name: "Amazon",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+        },
+        {
+          name: "Apple",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+        },
+        {
+          name: "Netflix",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+        },
+        {
+          name: "Microsoft",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+        },
+
+        {
+          name: "Meta",
+          logo: "https://scontent.fbpm1-2.fna.fbcdn.net/v/t39.8562-6/256577725_612381820192785_1516860531882870200_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f537c7&_nc_ohc=_ZI6b8BlM20Q7kNvwGZoGPD&_nc_oc=AdkHnWth9ufUSx9qR3GSxXJqWa4c2dcnG81-hoDYpc5eBMqtxkPq01Eo-vyysbQ0tl9nK18l1jwhH489agK-cri-&_nc_zt=14&_nc_ht=scontent.fbpm1-2.fna&_nc_gid=pkjo07aNZe1ZljSj5uljGw&oh=00_AfEolXjKkQBpfabM0wZ9kCtCRYwtfRIO4FxCtag66BwkVw&oe=680E9B68",
+        },
+        {
+          name: "Adobe",
+          logo: "https://imgs.search.brave.com/dp1ipE5wrXxMPJjjIJv43d0eYlkfM8NOx56xsC2BN00/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA4/L0Fkb2JlLUxvZ28t/NTAweDMxMy5qcGc",
+        },
+        {
+          name: "Intel",
+          logo: "https://imgs.search.brave.com/Lo88pcjHWkMHb7j6trtboAIk9hiMaRbAYRSTFqsNj_U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9JbnRlbC9J/bnRlbC1Mb2dvLndp/bmUuc3Zn",
+        },
+        {
+          name: "AMD",
+          logo: "https://imgs.search.brave.com/SspHh6DNhnAp3K7AGQPF-3PCp6xIOzEkaqhr62fAj9E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d29ybGR2ZWN0b3Js/b2dvLmNvbS9sb2dv/cy9hbWQtbG9nby1w/cmUtMjAxMy5zdmc",
+        },
+        {
+          name: "NVIDIA",
+          logo: "https://imgs.search.brave.com/08a108Enisr16Mf4UWicFdHo4FKDyxn7UdTonv6kZZw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bnZpZGlhLmNvbS9j/b250ZW50L252aWRp/YUdEQy91cy9lbl9V/Uy9hYm91dC1udmlk/aWEvbGVnYWwtaW5m/by9sb2dvLWJyYW5k/LXVzYWdlL19qY3Jf/Y29udGVudC9yb290/L3Jlc3BvbnNpdmVn/cmlkL252X2NvbnRh/aW5lcl8zOTI5MjE3/MDUvbnZfY29udGFp/bmVyXzQxMjA1NTQ4/Ni9udl9pbWFnZS5j/b3JlaW1nLnBuZy8x/NzAzMDYwMzI5MDk1/L252aWRpYS1sb2dv/LWhvcnoucG5n",
+        },
+
+        {
+          name: "Uber",
+          logo: "https://imgs.search.brave.com/6cs0iRhGDYRDF1HOQ0sHIuSR33FeHHLUtTJ78_v9mQI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by8zZC1yZW5kZXIt/dWJlci1sb2dvLWV4/dHJ1ZGVkLWdsb3Nz/eS1ibGFjay1hY3J5/bGljLWdlbnRseS1z/cGlubmluZy13aGl0/ZS1uZW9uLWhpZ2hs/aWdodHMtYXJvdW5k/XzEwMjA0OTUtNzgx/MDQ3LmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDA",
+        },
+        {
+          name: "X (formerly Twitter)",
+          logo: "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
+        },
+        {
+          name: "Salesforce",
+          logo: "https://imgs.search.brave.com/SSq89qI-4LX9aowwfVbaHAFMzB2rE75wbmlgu7BjTa8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2FsZXNmb3JjZS5j/b20vbmV3cy93cC1j/b250ZW50L3VwbG9h/ZHMvc2l0ZXMvMy8y/MDIxLzA1L1NhbGVz/Zm9yY2UtbG9nby5q/cGc_dz0xMDI0",
+        },
+        {
+          name: "VMware",
+          logo: "https://imgs.search.brave.com/rxF5vK5wYNa-bfvh6nL_wsPIMMjda0SQNKKM3kDrLvI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9WTXdhcmUv/Vk13YXJlLUxvZ28u/d2luZS5zdmc",
+        },
+        {
+          name: "Cisco",
+          logo: "https://imgs.search.brave.com/LsEq1V4LvKiwbBe6XjjR7IUqO4W4U3YzNT8WC9550io/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8w/LzA4L0Npc2NvX2xv/Z29fYmx1ZV8yMDE2/LnN2Zw",
+        },
+
+        {
+          name: "Qualcomm",
+          logo: "https://imgs.search.brave.com/S7p94KJvegju-hnhyY-uO8zyGlNV-TnauwC7Rds1t7Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9RdWFsY29t/bS9RdWFsY29tbS1M/b2dvLndpbmUuc3Zn",
+        },
+        { name: "Stripe", logo: "https://stripe.com/img/v3/home/twitter.png" },
+        {
+          name: "Square",
+          logo: "https://imgs.search.brave.com/SzTDwTCw1a3Orr2DSB1kZuNVJ4zVZccDpw9x6OwmntU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bG9nb2pveS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIw/NTAzMTQzNjIwL3Nx/dWFyZS1sb2dvLTYw/MHgzMzMucG5n",
+        },
+        {
+          name: "Shopify",
+          logo: "https://cdn.shopify.com/assets/images/logos/shopify-bag.png",
+        },
+        {
+          name: "TikTok",
+          logo: "https://imgs.search.brave.com/1COQKr-ooS1CDo3d8ZOC_kyG23QF6BkHshusXvOSo24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1wc2Qv/cHNkLXRpa3Rvay1s/b2dvLTNkLWljb24t/ZnJvbnQtdmlld181/NzY1ODgtMTEuanBn/P3NlbXQ9YWlzX2h5/YnJpZCZ3PTc0MA",
+        },
+
+        {
+          name: "ByteDance",
+          logo: "https://imgs.search.brave.com/RzwKLvm4cUlrXUWtk1_pwRPOwDSiQ_CgZ6aQkfy0oN4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2J5dGVk/YW5jZTk1NzgubG9n/b3dpay5jb20ud2Vi/cA",
+        },
+        {
+          name: "Tencent",
+          logo: "https://imgs.search.brave.com/YTFbOAhmC__bI5EhYDC64e3-Vh8EPF1k3EdbwULUEfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE4LzEw/L1RlbmNlbnQtTG9n/by01MDB4MzE0Lmpw/Zw",
+        },
+        {
+          name: "Alibaba",
+          logo: "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+        },
+        {
+          name: "Baidu",
+          logo: "https://www.baidu.com/img/flexible/logo/pc/result.png",
+        },
+        {
+          name: "Sony",
+          logo: "https://www.sony.com/image/sonyview1?fmt=png-alpha&wid=360",
+        },
+
+        {
+          name: "Huawei",
+          logo: "https://imgs.search.brave.com/wuIEbl7plKG1Z6Led2kORnSgivGwCSfWv6uWEUIqtks/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnJhbmRmZXRjaC5p/by9pZExBSjQyYmFV/L3cvMzQwOS9oLzc0/Ni90aGVtZS9kYXJr/L2xvZ28ucG5nP2M9/MWJ4aWQ2NE11cDdh/Y3pld1NBWU1YJnQ9/MTY3NjA0MTg0NDAz/Nw",
+        },
+        {
+          name: "Palantir",
+          logo: "https://imgs.search.brave.com/3tjY3tJa3hAyvKsstP0dsrV7f24QYOO8VDiH1fG26bk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8xLzEzL1Bh/bGFudGlyX1RlY2hu/b2xvZ2llc19sb2dv/LnN2Zy8yNTBweC1Q/YWxhbnRpcl9UZWNo/bm9sb2dpZXNfbG9n/by5zdmcucG5n",
+        },
+        {
+          name: "Databricks",
+          logo: "https://imgs.search.brave.com/C3MSMGAihjfprWhFquM5O9iIHjocMnILHwchxL48eBs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZHFsYWJzLmFpL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI1LzAx/L2RhdGFicmlja3Mt/bG9nby5wbmc",
+        },
+        {
+          name: "Snowflake",
+          logo: "https://www.snowflake.com/wp-content/themes/snowflake/assets/img/logo-blue.svg",
+        },
+        {
+          name: "MongoDB",
+          logo: "https://www.mongodb.com/assets/images/global/MongoDB_Logo_Dark.svg",
+        },
+
+        {
+          name: "Elastic",
+          logo: "https://imgs.search.brave.com/YrMS8gW2dO_kUFZMFRxJWNODAdQpFZxvTbbzW_bDmXI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZnJlZWJpZXN1cHBs/eS5jb20vbG9nb3Mv/bGFyZ2UvMngvZWxh/c3RpYy1sb2dvLXBu/Zy10cmFuc3BhcmVu/dC5wbmc",
+        },
+        {
+          name: "Atlassian",
+          logo: "https://wac-cdn.atlassian.com/dam/jcr:616e6748-ad8c-48d9-ae93-e49019ed5259/Atlassian-horizontal-blue-rgb.svg",
+        },
+        {
+          name: "GitLab",
+          logo: "https://about.gitlab.com/images/press/logo/svg/gitlab-logo-500.svg",
+        },
+        {
+          name: "Red Hat",
+          logo: "https://imgs.search.brave.com/8c9TtGQcM3OUaVd8Y9i2542TLei1qdckyZBSwgp23CU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9SZWRfSGF0/L1JlZF9IYXQtTG9n/by53aW5lLnN2Zw",
+        },
+        {
+          name: "ServiceNow",
+          logo: "https://imgs.search.brave.com/alk9Edhpt7ogXAG8KNFo4bMKtYqDpMPqLAFqozSKHvs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy82/MmI0NTliNDRkNWI2/ODE1ODQ4MWNiMWEu/cG5n",
+        },
+      ];
+
+      const companiesCount = companies.length;
+      document.addEventListener("DOMContentLoaded", () => {
+        const companyGrid = document.getElementById("companies-container");
+        companies.forEach((company) => {
+          const card = document.createElement("div");
+          card.className = "company-card";
+          card.setAttribute("data-company", company.name);
+          card.innerHTML = `
+                    <img src="${company.logo}" alt="${
+            company.name
+          } Logo" class="logo" 
+                         onerror="this.src='https://via.placeholder.com/80x80?text=${encodeURIComponent(
+                           company.name
+                         )}'" 
+                         loading="lazy">
+                    <h3>${company.name}</h3>
+                `;
+          card.addEventListener("click", () => {
+            window.location.href = `company.html?company=${encodeURIComponent(
+              company.name
+            )}`;
+          });
+          companyGrid.appendChild(card);
+        });
+      });
+    </script>
+  </body>
+</html>
